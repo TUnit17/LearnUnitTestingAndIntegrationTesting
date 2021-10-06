@@ -20,6 +20,8 @@ public class StudentService {
     }
 
     public void addStudent(Student student) {
+
+        // when studentRepo is mocked, this returns false when it should actually be true
         Boolean existsEmail = studentRepository
                 .selectExistsEmail(student.getEmail());
         if (existsEmail) {
